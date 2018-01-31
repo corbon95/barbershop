@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+   	<head>
+      	<meta charset="utf-8">
+      	<title>Контакты — Borodinski</title>
+      	<link rel="stylesheet" href="css/styles.css">
+      	<link rel="shortcut icon" href="img/favicon.ico" type="image/vnd.microsoft.icon">
+      	<link rel="icon" type="image/png" href="img/favicon-96x96.png" sizes="96x96">
+      	<link rel="icon" type="image/png" href="img/favicon-64x64.png" sizes="64x64">
+      	<link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32">
+      	<link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16">
+   	</head>
+
+   	<body>
+
+		<header class="page-header">
+         	<nav class="nav-bar  container">
+
+				<a class="inner-logo" href="index.html" title="Вернуться на главную">
+					<img src="img/inner-logo.png" width="111" height="24" alt="Барбершоп «Borodinski">
+				</a>
+
+				<ul class="main-nav">
+               		<li class="main-nav-item">
+						<a class="nav-item-link" href="news.html">Новости</a>
+					</li>
+               		<li class="main-nav-item">
+						<a class="nav-item-link" href="price.html">Прайс-лист</a>
+					</li>
+               		<li class="main-nav-item">
+						<a class="nav-item-link" href="shop.html">Магазин</a>
+					</li>
+               		<li class="main-nav-item">
+						<a class="nav-item-link  current-page" href="contacts.html">Контакты</a>
+					</li>
+            	</ul>
+
+            	<ul class="user-menu">
+               		<li class="user-menu-item">
+						<a class="login-btn  user-menu-link" href="login.html">Вход</a>
+					</li>
+            	</ul>
+
+         	</nav>
+      	</header>
+
+      	<main class="page-main">
+         	<div class="container">
+
+            	<h1 class="inner-title">Контакты</h1>
+            	<nav class="breadcrumps">
+               		<a class="breadcrumps-link" href="index.html">Главная</a>
+               		<span class="breadcrumps-current">Контакты</span>
+            	</nav>
+
+            	<section class="schedule  contacts-content-wrapper">
+               		<h2 class="inner-content-title">Режим работы нашего салона:</h2>
+               		<table>
+                  		<tr>
+                     		<td>Понедельник — Пятница</td>
+                     		<td>10:00 — 21:00</td>
+                     		<td rowspan="2">Без обеда</td>
+                  		</tr>
+                  		<tr>
+                     		<td>Суббота — Воскресенье</td>
+                     		<td>10:00 — 19:00</td>
+                  		</tr>
+               		</table>
+            	</section>
+
+            	<section class="location  contacts-content-wrapper">
+               		<h2 class="inner-content-title">Как нас найти:</h2>
+               		<p>
+                  		Мы ждём Вас по адресу:<br>
+                  		г. Санкт-Петербург, ул. Большая Конюшенная, д. 19/8
+               		</p>
+               		<p>
+                  		Телефон для записи:<br>
+                  		<a href="tel:+78125555555">+7 (812) 555-55-55</a>
+               		</p>
+               		<iframe id="map" class="location-map" src="https://yandex.ru/map-widget/v1/-/CBQJiVTrHC" width="940" height="500"></iframe>
+            	</section>
+
+         	</div>
+      	</main>
+
+		<footer class="page-footer">
+			<div class="footer-container  container">
+
+				<p class="footer-contacts">
+					Барбершоп «Borodinski»<br>
+					Адрес: Санкт-Петербург, Б. Конюшенная, 19/8<br>
+					<a class="map-link" href="contacts.html#map">Как нас найти?</a><br>
+					Телефон: <a href="tel:+78125555555">+7 (812) 555-55-55</a>
+				</p>
+
+				<div class="footer-social">
+					<p>Мы в социальных сетях:</p>
+					<a class="social-btn  social-btn-vk" href="https://vk.com" target="_blank">Вконтакте</a>
+					<a class="social-btn  social-btn-fb" href="https://facebook.com" target="_blank">Фейсбук</a>
+					<a class="social-btn  social-btn-inst" href="https://www.instagram.com" target="_blank">Инстаграм</a>
+				</div>
+
+				<p class="footer-copyright">
+					<a href="mailto:arkartavtsev@live.ru">Артём Картавцев</a> для <a class="copyright-btn  btn" href="https://htmlacademy.ru" target="_blank">HTML Academy</a>
+				</p>
+
+			</div>
+		</footer>
+
+		<div class="modal-overlay"></div>
+
+		<div class="modal-content-form">
+			<h1 class="inner-title">Личный кабинет</h1>
+			<p>Введите логин и пароль</p>
+			<form class="login-form" action="index.html" method="post">
+				<label for="login-field" class="visually-hidden">Логин</label>
+				<input id="login-field" class="login-field  login-form-field  form-field" type="text" name="login" placeholder="Логин">
+
+				<label for="password-field" class="visually-hidden">Пароль</label>
+				<input id="password-field" class="password-field  login-form-field  form-field" type="password" name="password" placeholder="Пароль">
+
+				<label class="checkbox-field">
+					<input class="custom-checkbox  visually-hidden" type="checkbox" name="remember" checked>
+					<span class="checkbox-replacer"></span>
+					Запомнить меня
+				</label>
+
+				<a class="restore-link" href="#">Напомнить пароль</a>
+				<button class="btn" type="submit">Войти</button>
+			</form>
+			<p>Впервые на нашем сайте? <a class="sign-up-link" href="#">Зарегистрируйтесь!</a></p>
+		</div>
+
+		<div class="modal-content-map">
+			<iframe class="location-map" src="https://yandex.ru/map-widget/v1/-/CBQJiVTrHC" width="766" height="560"></iframe>
+		</div>
+
+		<script type="text/javascript" src="js/scripts.js"></script>
+
+   	</body>
+
+</html>

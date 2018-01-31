@@ -1,0 +1,139 @@
+.shop-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.goods-filter {
+    width: 220px;
+}
+
+.goods-filter fieldset {
+    padding: 0;
+    margin: 0;  margin-bottom: 50px;
+    border: none;
+}
+
+.goods-filter .checkbox-field,
+.goods-filter .radio-btn-field {
+    display: block;
+    margin-bottom: 14px;
+}
+.goods-filter .checkbox-field:last-child,
+.goods-filter .radio-btn-field:last-child {
+    margin-bottom: 0;
+}
+
+
+.goods-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 700px;
+}
+
+
+.goods-item {
+    box-sizing: border-box;
+    width: 220px;
+    margin-right: 20px;  margin-bottom: 20px;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 0 8px 4px rgb(229, 229, 229);
+}
+.goods-item:nth-of-type(3n) {
+    margin-right: 0;
+}
+.goods-item:nth-of-type(n+4) {
+    margin-bottom: 0;
+}
+.goods-item:hover {
+    box-shadow: 0 0 16px 8px rgb(229, 229, 229);
+}
+
+.goods-item-header {
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+
+.goods-item-title {
+    padding: 0;
+    margin: 13px 0;  margin-left: 15px;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.goods-item-title span {
+    display: block;
+    text-transform: none;
+}
+
+
+.goods-item-price {
+    display: flex;
+}
+.goods-item .goods-item-price {
+    margin-left: 15px; margin-bottom: 15px;
+}
+
+.goods-item-price .price-value {
+    display: block;
+    width: 110px;
+    padding: 10px 0;
+    text-align: center;
+    background: rgb(229, 229, 229);
+}
+
+.goods-item-price .shop-btn {
+    width: 80px;
+    padding: 10px 15px;
+}
+
+
+
+
+.goods-item-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 460px;
+}
+
+.goods-item-gallery img {
+    box-shadow: 0 0 8px 4px rgb(229, 229, 229);
+}
+
+.item-photo {
+    width: 140px;
+	height: 150px;
+    cursor: pointer;
+}
+.item-photo:hover {
+    box-shadow: 0 0 16px 8px rgb(229, 229, 229);
+}
+
+.primary-photo {
+    width: 460px; height: 499px;
+    margin-bottom: 20px;
+}
+
+
+.goods-item-description {
+    width: 390px;
+}
+
+.goods-item-description .description-header {
+    display: flex;
+    justify-content: space-between;
+}
+.description-header p:last-child {
+    color: rgb(171, 169, 167);
+}
+
+.goods-item-description p {
+    margin-bottom: 30px;
+}
+
+.goods-item-description .goods-item-price {
+    margin-bottom: 70px;
+}
