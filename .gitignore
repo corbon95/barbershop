@@ -1,4 +1,4 @@
 sources/
-css/
-!styles.css
-!styles.min.css
+css/*
+!css/styles.css
+!css/styles.min.css
