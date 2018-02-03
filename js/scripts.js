@@ -105,7 +105,6 @@ if (popupMap) {
 	var openMapBtn = document.querySelector('.map-btn');
 	var openMapLink = document.querySelector('.map-link');
 
-	// var closeMap = popupMap.querySelector('.modal-content-close');
 	var closeMap = document.createElement('button');
 	closeMap.classList.add('modal-content-close');
 	closeMap.type = 'button';
@@ -174,41 +173,115 @@ if (indexGallery) {
 	galleryNav.classList.add('gallery-nav');
 	indexGallery.appendChild(galleryNav);
 
-	var prevButton = document.createElement('button');
-	prevButton.classList.add('btn');
-	prevButton.type = 'button';
-	prevButton.textContent = 'Назад';
-	galleryNav.appendChild(prevButton);
+	var galleryPrev = document.createElement('button');
+	galleryPrev.classList.add('btn');
+	galleryPrev.type = 'button';
+	galleryPrev.textContent = 'Назад';
+	galleryNav.appendChild(galleryPrev);
 
-	var nextButton = document.createElement('button');
-	nextButton.classList.add('btn');
-	nextButton.type = 'button';
-	nextButton.textContent = 'Вперед';
-	galleryNav.appendChild(nextButton);
+	var galleryNext = document.createElement('button');
+	galleryNext.classList.add('btn');
+	galleryNext.type = 'button';
+	galleryNext.textContent = 'Вперед';
+	galleryNav.appendChild(galleryNext);
 
 
-	nextButton.addEventListener('click', function() {
-		if (currentPhoto.classList.contains('last-photo')) {
-	        firstphoto.classList.add('current-photo');
-			currentPhoto.classList.remove('current-photo');
-			currentPhoto = indexGallery.querySelector('.current-photo');
-	    } else {
-			currentPhoto.nextSibling.nextSibling.classList.add('current-photo');
-		    currentPhoto.classList.remove('current-photo');
-		    currentPhoto = indexGallery.querySelector('.current-photo');
-	    }
-	});
-
-	prevButton.addEventListener('click', function() {
+	galleryPrev.addEventListener('click', function() {
 		if (currentPhoto.classList.contains('first-photo')) {
 	        lastPhoto.classList.add('current-photo');
-			currentPhoto.classList.remove('current-photo');
-			currentPhoto = indexGallery.querySelector('.current-photo');
 	    } else {
 			currentPhoto.previousSibling.previousSibling.classList.add('current-photo');
-		    currentPhoto.classList.remove('current-photo');
-		    currentPhoto = indexGallery.querySelector('.current-photo');
 	    }
+		currentPhoto.classList.remove('current-photo');
+		currentPhoto = indexGallery.querySelector('.current-photo');
+	});
+
+	galleryNext.addEventListener('click', function() {
+		if (currentPhoto.classList.contains('last-photo')) {
+	        firstphoto.classList.add('current-photo');
+	    } else {
+			currentPhoto.nextSibling.nextSibling.classList.add('current-photo');
+	    }
+		currentPhoto.classList.remove('current-photo');
+		currentPhoto = indexGallery.querySelector('.current-photo');
+	});
+
+
+	var modalPhoto = document.querySelector('.modal-content-photo');
+
+	var zoomedPhoto = document.createElement('img');
+	zoomedPhoto.classList.add('zoomed-photo');
+	modalPhoto.appendChild(zoomedPhoto);
+
+	var closePhoto = document.createElement('button');
+	closePhoto.classList.add('modal-content-close');
+	closePhoto.type = 'button';
+	modalPhoto.appendChild(closePhoto);
+
+	var sliderPrev = document.createElement('button');
+	sliderPrev.classList.add('gallery-slider-prev', 'gallery-slider-btn');
+	sliderPrev.type = 'button';
+	modalPhoto.appendChild(sliderPrev);
+
+	var sliderNext = document.createElement('button');
+	sliderNext.classList.add('gallery-slider-next', 'gallery-slider-btn');
+	sliderNext.type = 'button';
+	modalPhoto.appendChild(sliderNext);
+
+	for (var i = 0; i < photos.length; i++) {
+		photos[i].addEventListener('click', function(event) {
+			event.preventDefault();
+			overlay.classList.add('modal-overlay-show');
+
+			zoomedPhoto.setAttribute("src", currentPhoto.getAttribute('href'));
+
+			modalPhoto.classList.add('modal-content-photo-show');
+			modalPhoto.style.marginTop = '-' + modalPhoto.offsetHeight/2 + 'px';
+			modalPhoto.style.marginLeft = '-' + modalPhoto.offsetWidth/2 + 'px';
+		});
+	}
+
+
+	sliderPrev.addEventListener('click', function() {
+		if (currentPhoto.classList.contains('first-photo')) {
+	        lastPhoto.classList.add('current-photo');
+	    } else {
+			currentPhoto.previousSibling.previousSibling.classList.add('current-photo');
+	    }
+		currentPhoto.classList.remove('current-photo');
+		currentPhoto = indexGallery.querySelector('.current-photo');
+		zoomedPhoto.setAttribute("src", currentPhoto.getAttribute('href'));
+	});
+
+	sliderNext.addEventListener('click', function() {
+		if (currentPhoto.classList.contains('last-photo')) {
+	        firstphoto.classList.add('current-photo');
+	    } else {
+			currentPhoto.nextSibling.nextSibling.classList.add('current-photo');
+	    }
+		currentPhoto.classList.remove('current-photo');
+		currentPhoto = indexGallery.querySelector('.current-photo');
+		zoomedPhoto.setAttribute("src", currentPhoto.getAttribute('href'));
+	});
+
+
+	closePhoto.addEventListener('click', function(event) {
+	   	event.preventDefault();
+	   	overlay.classList.remove('modal-overlay-show');
+	   	modalPhoto.classList.remove('modal-content-photo-show');
+	});
+
+	overlay.addEventListener('click', function(event) {
+	   	event.preventDefault();
+	   	overlay.classList.remove('modal-overlay-show');
+	   	modalPhoto.classList.remove('modal-content-photo-show');
+	});
+
+	window.addEventListener('keydown', function(event) {
+	   	if (event.keyCode === 27) {
+	      	overlay.classList.remove('modal-overlay-show');
+	      	modalPhoto.classList.remove('modal-content-photo-show');
+	   	}
 	});
 
 }
