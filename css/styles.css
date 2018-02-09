@@ -802,17 +802,30 @@ a {
 	position: relative;
     z-index: 10;
 }
+.index-gallery-js .current-photo:hover::before {
+	content: "";
+	position: absolute;
+	top: 40px;  left: 110px;
+	box-sizing: border-box;
+	width: 80px;
+	height: 80px;
+	background: rgba(200, 200, 200, 0.5) url("../img/favicon-64x64.png") 50% 50% / 70% no-repeat;
+	border: 5px solid rgb(0, 0, 0);
+	border-radius: 50%;
+}
 .index-gallery-js .current-photo:hover::after {
 	content: "";
 	position: absolute;
-	top: 39px;  left: 100px;
-	width: 100px;
-	height: 100px;
-	background: url("../img/zoom-loupe.png") 50% 50% / 100% no-repeat;
-	opacity: 0.8;
+	top: 122px;  left: 162px;
+	width: 30px;
+	height: 10px;
+	background: rgb(0, 0, 0);
+	border-radius: 5px;
+	transform: rotate(55deg);
 }
+.index-gallery-js .current-photo:active::before,
 .index-gallery-js .current-photo:active::after {
-	opacity: 0.6;
+	opacity: 0.7;
 }
 
 .index-gallery-js .gallery-nav {
@@ -846,27 +859,32 @@ a {
 	position: absolute;
 	top: 7px;  bottom: 14px;
 	width: 100px;
+	padding: 0;
+	margin: 0;
 	background: transparent;
 	border: none;
 	outline: none;
 	cursor: pointer;
 }
-.gallery-slider-btn:hover {
-	background: rgba(0, 0, 0, 0.3);
+.gallery-slider-btn::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	width: 35px;
+	height: 64px;
+	margin-top: -32px;
+	opacity: 0.5;
 }
 
 .gallery-slider-prev {
 	left: 7px;
 }
+.gallery-slider-prev:hover {
+	background: linear-gradient(to right, rgba(0, 0, 0, 0.3), transparent 80%);
+}
 .gallery-slider-prev::after {
-	content: "";
-	position: absolute;
-	top: 50%;  left: 15px;
-	width: 64px;
-	height: 64px;
-	margin-top: -32px;
-	background: url(../img/arrow-back.png) 50% 50% / 100% no-repeat;
-	opacity: 0.5;
+	left: 15px;
+	background: url(../img/arrow-back.png) 50% 50% no-repeat;
 }
 .gallery-slider-prev:hover::after {
 	opacity: 1;
@@ -879,15 +897,12 @@ a {
 .gallery-slider-next {
 	right: 7px;
 }
+.gallery-slider-next:hover {
+	background: linear-gradient(to left, rgba(0, 0, 0, 0.3), transparent 80%);
+}
 .gallery-slider-next::after {
-	content: "";
-	position: absolute;
-	top: 50%;  right: 15px;
-	width: 64px;
-	height: 64px;
-	margin-top: -32px;
-	background: url(../img/arrow-next.png) 50% 50% / 100% no-repeat;
-	opacity: 0.5;
+	right: 15px;
+	background: url(../img/arrow-next.png) 50% 50% no-repeat;
 }
 .gallery-slider-next:hover::after {
 	opacity: 1;
