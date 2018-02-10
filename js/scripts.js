@@ -29,9 +29,6 @@ if (popupForm) {
 	var loginForm = popupForm.querySelector('.login-form');
 	var loginFormFields = document.querySelectorAll('.login-form-field');
 
-	var loginField = popupForm.querySelector('.login-field');
-	var passwordField = popupForm.querySelector('.password-field');
-
 	var closeForm = document.createElement('button');
 	closeForm.classList.add('modal-content-close');
 	closeForm.type = 'button';
@@ -39,16 +36,27 @@ if (popupForm) {
 
 
 	openForm.addEventListener('click', function(event) {
+		var focusFieldNum = 0;
+
 	   	event.preventDefault();
 	   	overlay.classList.add('modal-overlay-show');
 	   	popupForm.classList.remove('modal-content-form-error');
-	   	popupForm.classList.add('modal-content-form-show');
-	   	loginField.focus();
+		popupForm.classList.add('modal-content-form-show');
+
+		for (var i = 0; i < loginFormFields.length; i++) {
+			loginFormFields[i].classList.remove('form-field-invalid');
+
+			if ( !loginFormFields[i].value && (loginFormFields[focusFieldNum] != document.activeElement) && (i >= focusFieldNum) ) {
+				focusFieldNum = i;
+				loginFormFields[focusFieldNum].focus();
+			}
+		}
 	});
 
 
 	loginForm.addEventListener('submit', function(event) {
 		var invalidFieldNum = 0;
+
 		for (var i = 0; i < loginFormFields.length; i++) {
 			if (!loginFormFields[i].value) {
 				event.preventDefault();
@@ -66,6 +74,7 @@ if (popupForm) {
 			}
 		}
 	});
+
 
 	for (var i = 0; i < loginFormFields.length; i++)  {
 		listenInputChanges(loginFormFields[i]);
