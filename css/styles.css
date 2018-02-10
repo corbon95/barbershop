@@ -1074,20 +1074,19 @@ a {
     display: flex;
 }
 .goods-item .goods-item-price {
-    margin-left: 15px; margin-bottom: 15px;
+    margin-left: 15px;  margin-bottom: 15px;
 }
 
 .goods-item-price .price-value {
     display: block;
-    width: 110px;
+    width: 95px;
     padding: 10px 0;
     text-align: center;
     background: rgb(229, 229, 229);
 }
 
 .goods-item-price .shop-btn {
-    width: 80px;
-    padding: 10px 15px;
+    width: 95px;
 }
 
 
