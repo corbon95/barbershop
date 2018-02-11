@@ -425,18 +425,45 @@ a {
 /* Стили полей форм */
 
 
+.form-field-group {
+	position: relative;
+}
+
 .form-field {
-   box-sizing: border-box;
-   padding: 7px 15px;
-   font: inherit;
-   text-transform: inherit;
-   color: inherit;
-   border: 2px solid rgb(0, 0, 0);
-   background: rgb(248, 245, 242) url("../img/icons-sprite.png") no-repeat;
+    box-sizing: border-box;
+    padding: 7px 15px;
+    font: inherit;
+    text-transform: inherit;
+    color: inherit;
+    border: 2px solid rgb(0, 0, 0);
+    background: rgb(248, 245, 242);
 }
 .form-field:focus {
     outline: 0;
     border: 2px solid rgb(102, 61, 21);
+}
+.form-field:placeholder-shown + .form-field-label {
+	position: absolute;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	width: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+}
+
+.form-field:focus + .form-field-label {
+	color: rgb(102, 61, 21);
+}
+
+.form-field-label {
+	position: absolute;
+	top: -10px;  left: 15px;
+	display: block;
+	padding: 0 2px;
+	font-size: 12px;
+	background: rgb(248, 245, 242);
 }
 
 .form-field-invalid {
@@ -622,6 +649,7 @@ a {
     width: 300px;
     padding-right: 40px;
 	margin-bottom: 14px;
+	background: rgb(248, 245, 242) url("../img/icons-sprite.png") no-repeat;
 }
 
 .login-form .login-field {

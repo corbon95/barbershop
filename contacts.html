@@ -115,11 +115,15 @@
 			<h1 class="inner-title">Личный кабинет</h1>
 			<p>Введите логин и пароль</p>
 			<form class="login-form" action="contacts.html" method="post">
-				<label for="login-field" class="visually-hidden">Логин</label>
-				<input id="login-field" class="login-field  login-form-field  form-field" type="text" name="login" placeholder="Логин">
+				<div class="form-field-group">
+					<input id="login-field" class="login-field  login-form-field  form-field" type="text" name="login" placeholder="Логин">
+					<label for="login-field" class="form-field-label">Логин</label>
+				</div>
 
-				<label for="password-field" class="visually-hidden">Пароль</label>
-				<input id="password-field" class="password-field  login-form-field  form-field" type="password" name="password" placeholder="Пароль">
+				<div class="form-field-group">
+					<input id="password-field" class="password-field  login-form-field  form-field" type="password" name="password" placeholder="Пароль">
+					<label for="password-field" class="form-field-label">Пароль</label>
+				</div>
 
 				<label class="checkbox-field">
 					<input class="custom-checkbox  visually-hidden" type="checkbox" name="remember" checked>

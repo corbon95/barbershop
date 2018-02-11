@@ -132,17 +132,26 @@
 	                  	<h2 class="index-content-title">Записаться</h2>
 	                  	<p>Укажите желаемую дату и время, и мы свяжемся с Вами для подтверждения брони</p>
 	                  	<form class="appointment-form" action="index.html" method="post">
-	                     	<label for="date-field" class="visually-hidden">Дата</label>
-	                     	<input id="date-field" class="appointment-field  form-field" type="text" name="date" placeholder="Дата">
 
-	                     	<label for="time-field" class="visually-hidden">Время</label>
-	                     	<input id="time-field" class="appointment-field  form-field" type="text" name="time" placeholder="Время">
+							<div class="form-field-group">
+								<input id="date-field" class="appointment-field  form-field" type="text" name="date" placeholder="Дата">
+								<label for="date-field" class="form-field-label">Дата</label>
+							</div>
 
-	                     	<label for="name-field" class="visually-hidden">Ваше имя</label>
-	                     	<input id="name-field" class="appointment-field  form-field" type="text" name="name" placeholder="Ваше имя">
+	                     	<div class="form-field-group">
+								<input id="time-field" class="appointment-field  form-field" type="text" name="time" placeholder="Время">
+								<label for="time-field" class="form-field-label">Время</label>
+	                     	</div>
 
-	                     	<label for="phone-field" class="visually-hidden">Телефон</label>
-	                     	<input id="phone-field" class="appointment-field  form-field" type="tel" name="phone" placeholder="Телефон">
+							<div class="form-field-group">
+								<input id="name-field" class="appointment-field  form-field" type="text" name="name" placeholder="Ваше имя">
+								<label for="name-field" class="form-field-label">Ваше имя</label>
+	                     	</div>
+
+							<div class="form-field-group">
+								<input id="phone-field" class="appointment-field  form-field" type="tel" name="phone" placeholder="Телефон">
+								<label for="phone-field" class="form-field-label">Телефон</label>
+	                     	</div>
 
 	                     	<button class="btn" type="submit">Оставить заявку</button>
 	                  	</form>
@@ -183,11 +192,15 @@
 			<h1 class="inner-title">Личный кабинет</h1>
 			<p>Введите логин и пароль</p>
 			<form class="login-form" action="index.html" method="post">
-				<label for="login-field" class="visually-hidden">Логин</label>
-				<input id="login-field" class="login-field  login-form-field  form-field" type="text" name="login" placeholder="Логин">
+				<div class="form-field-group">
+					<input id="login-field" class="login-field  login-form-field  form-field" type="text" name="login" placeholder="Логин">
+					<label for="login-field" class="form-field-label">Логин</label>
+				</div>
 
-				<label for="password-field" class="visually-hidden">Пароль</label>
-				<input id="password-field" class="password-field  login-form-field  form-field" type="password" name="password" placeholder="Пароль">
+				<div class="form-field-group">
+					<input id="password-field" class="password-field  login-form-field  form-field" type="password" name="password" placeholder="Пароль">
+					<label for="password-field" class="form-field-label">Пароль</label>
+				</div>
 
 				<label class="checkbox-field">
 					<input class="custom-checkbox  visually-hidden" type="checkbox" name="remember" checked>
