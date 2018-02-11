@@ -239,7 +239,6 @@ a {
 	width: 140px;
 	padding: 10px 0;
 }
-
 .page-main .btn:hover {
     color: rgb(255, 255, 255);
     background: rgb(102, 61, 21);
@@ -254,12 +253,17 @@ a {
     margin-bottom: 50px;
 }
 
+.breadcrumps-link {
+	position: relative;
+	margin-right: 40px;
+}
 .breadcrumps-link::after {
     content: "";
-    display:inline-block;
+	position: absolute;
+	top: 3px;  right: -25px;
+    display: inline-block;
     width: 10px;
 	height: 10px;
-    margin: 0 15px;
     background: rgb(0, 0, 0);
     transform: rotate(45deg);
 }
