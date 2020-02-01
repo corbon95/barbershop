@@ -1,4 +1,4 @@
-Учебный проект "Барбершоп Borodinski" базового интенсива <a href="https://htmlacademy.ru" target="_blank">HTML Academy</a><br>
+Учебный проект "Барбершоп POLY-Barber" базового интенсива <a href="https://htmlacademy.ru" target="_blank">HTML Academy</a><br>
 Фиксированная вёрстка, HTML5, CSS3, нативный JavaScript, прогрессивное улучшение<br>
 <br>
 
